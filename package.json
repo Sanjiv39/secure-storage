@@ -1,13 +1,21 @@
 {
-  "name": "secure-storage",
+  "name": "@securestorage/common",
   "version": "1.0.0",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsup",
-    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "ci": "npm run build && npm run check-exports"
   },
   "files": [
     "dist"
@@ -32,8 +40,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "crypto-js": "^4.2.0",
-    "dotenv": "^16.5.0"
+    "crypto-js": "^4.2.0"
   },
   "homepage": "https://github.com/Sanjiv39/secure-storage",
   "repository": "https://github.com/Sanjiv39/secure-storage"

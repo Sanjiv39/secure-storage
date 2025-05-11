@@ -6,4 +6,8 @@ export default defineConfig({
   dts: true,
   outDir: "dist",
   clean: true,
+  env: {
+    SECURE_STORAGE_SECRET: "x1bQYQA4vSEcR6RQ05XtJg",
+    SECURE_STORAGE_PREFIX: "@secst",
+  },
 });
