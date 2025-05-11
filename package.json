@@ -1,0 +1,28 @@
+{
+  "name": "secure-storage",
+  "version": "1.0.0",
+  "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "securestorage",
+    "storage",
+    "localstorage",
+    "sessionstorage",
+    "encrypted",
+    "local",
+    "session"
+  ],
+  "author": "Sanjiv39",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
