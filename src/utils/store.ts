@@ -40,7 +40,7 @@ type TemplateData = {
  * @description Returns string format of data passed or `null`
  * @description Modifies in the format of `{data, type}`
  */
-const modifyDataToString = (data: any) => {
+export const modifyDataToString = (data: any) => {
   try {
     if (typeof data === "function" || typeof data === "symbol") {
       throw new Error("Data must not be a function or symbol");
@@ -62,7 +62,7 @@ const modifyDataToString = (data: any) => {
  * @description Returns data from of formatted string passed or `null`
  * @description Accepts data string in the format of `{data, type}`
  */
-const getDataFromModifiedString = (str: string) => {
+export const getDataFromModifiedString = (str: string) => {
   try {
     if (typeof str !== "string") {
       throw new Error("Value must be string");

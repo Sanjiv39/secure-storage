@@ -21,7 +21,7 @@ export const decrypt = (value: string) => {
     if (typeof value !== "string") {
       throw new Error("Value must be string");
     }
-    const str = CryptoJS.AES.decrypt(value, secret).toString();
+    const str = CryptoJS.AES.decrypt(value, secret).toString(CryptoJS.enc.Utf8);
     return str;
   } catch (err) {
     console.error("Error secure storage => decrypt :", err);
