@@ -2,10 +2,11 @@
   "name": "secure-storage",
   "version": "1.0.0",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "npm"
+    "build": "npx tsc",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
   },
   "files": [
     "dist"
@@ -22,6 +23,7 @@
   "author": "Sanjiv39",
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.1",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.15.17",
     "ts-node": "^10.9.2",
