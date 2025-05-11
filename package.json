@@ -1,6 +1,6 @@
 {
   "name": "@securestorage/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
