@@ -4,15 +4,14 @@ export default defineConfig({
   // entry: ["src/**/*.[jt]s"], // for multiple files
   entry: ["src/index.ts"],
   format: ["cjs", "esm"],
+  platform: "browser",
+  target: ["node16"],
   dts: true,
   outDir: "dist",
-  splitting: true,
+  splitting: false,
   clean: true,
-  // sourcemap: true,
+  sourcemap: true,
   minify: true,
-  outExtension({ format }) {
-    return format === "esm" ? { js: ".mjs" } : { js: ".cjs" };
-  },
   env: {
     SECURE_STORAGE_SECRET: "x1bQYQA4vSEcR6RQ05XtJg",
     SECURE_STORAGE_PREFIX: "@secst",

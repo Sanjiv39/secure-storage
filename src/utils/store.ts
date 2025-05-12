@@ -1,5 +1,14 @@
 import { decrypt, encrypt } from "./crypt";
 
+var window = global.window;
+/**
+ * @description ⚠️`Experimental`⚠️
+ * @description Use this to change the global `window` object
+ */
+export const changeWindow = (newWindow: any) => {
+  window = newWindow;
+};
+
 export type SupportedTypes =
   | boolean
   | object
@@ -30,6 +39,17 @@ const getPrefix = () => {
   }
 };
 const prefix = getPrefix();
+
+export const getModKey = (key: string) => {
+  if (typeof prefix !== "string") {
+    throw new Error("Prefix is invalid");
+  }
+  if (typeof key !== "string") {
+    throw new Error("Key must be string");
+  }
+  const str = `${prefix}.${key}`;
+  return str;
+};
 
 type TemplateData = {
   data: SupportedTypes;

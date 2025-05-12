@@ -3,13 +3,14 @@
   "version": "1.0.1",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "import": "./dist/index.js",
+      "module": "./dist/index.js",
       "default": "./dist/index.cjs"
     }
   },
@@ -37,12 +38,16 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.1",
     "@types/crypto-js": "^4.2.2",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^22.15.17",
+    "browser-env": "^3.3.0",
+    "jsdom": "^26.1.0",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "tsup": "^8.4.0",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "window": "^4.2.7"
   },
   "dependencies": {
     "crypto-js": "^4.2.0"
