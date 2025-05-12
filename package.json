@@ -1,6 +1,6 @@
 {
   "name": "@secure-storage/common",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -25,13 +25,23 @@
     "dist"
   ],
   "keywords": [
-    "securestorage",
+    "encrypted",
+    "secure",
+    "local",
+    "session",
     "storage",
+    "react",
+    "securestorage",
+    "encryptedstorage",
     "localstorage",
     "sessionstorage",
-    "encrypted",
-    "local",
-    "session"
+    "reactstorage",
+    "secure storage",
+    "encrypted storage",
+    "local storage",
+    "session storage",
+    "react storage",
+    "react secure local storage"
   ],
   "author": "Sanjiv39",
   "license": "MIT",
