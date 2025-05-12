@@ -1,8 +1,9 @@
 {
-  "name": "@securestorage/common",
-  "version": "1.0.2",
+  "name": "@secure-storage/common",
+  "version": "1.0.1",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
@@ -15,8 +16,9 @@
   "scripts": {
     "build": "tsup",
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "ci": "npm run build && npm run check-exports",
-    "test": "nodemon -- src/test/store.ts"
+    "ci": "npm run test && npm run build && npm run check-exports",
+    "test": "tsx src/test/store.ts",
+    "dev-test": "nodemon -- src/test/store.ts"
   },
   "files": [
     "dist"
