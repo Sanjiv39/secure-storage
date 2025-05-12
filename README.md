@@ -93,7 +93,7 @@ const loggedData = sessionStorage.getItem("loggedData");
 
 // Retrieve data (typed) - inherits the user passed type to variable
 const userTyped = localStorage.getItem<{ name: string; age: number }>("user");
-const loggedDataTyped = sessionStorage.getItem<{ name: string; age: number }>(
+const loggedDataTyped = sessionStorage.getItem<{ session: string }>(
   "loggedData"
 );
 
