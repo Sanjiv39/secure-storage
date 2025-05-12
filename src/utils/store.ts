@@ -1,6 +1,6 @@
 import { decrypt, encrypt } from "./crypt";
 
-var window = global.window;
+var window: Window & typeof globalThis;
 /**
  * @description ⚠️`Experimental`⚠️
  * @description Use this to change the global `window` object
