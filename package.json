@@ -1,6 +1,6 @@
 {
   "name": "@secure-storage/common",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -62,6 +62,6 @@
   "dependencies": {
     "crypto-js": "^4.2.0"
   },
-  "homepage": "https://github.com/Sanjiv39/secure-storage",
+  "homepage": "https://github.com/Sanjiv39/secure-storage#readme",
   "repository": "https://github.com/Sanjiv39/secure-storage"
 }
