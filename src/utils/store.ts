@@ -119,6 +119,13 @@ const validateStore = (store: StoreType) => {
   if (typeof store !== "string" || !storeTypes.includes(store)) {
     throw new Error("Store type must be one of [local, session]");
   }
+  if (
+    typeof window !== "object" ||
+    typeof window.localStorage !== "object" ||
+    typeof window.sessionStorage !== "object"
+  ) {
+    throw new Error("Invalid window, please use only in browser");
+  }
 };
 
 /**
@@ -256,7 +263,7 @@ export class Store<S extends StoreType> {
       preValidations(prefix as string, "", this.store);
       this.storage.clear();
     } catch (err) {
-      console.error("Error secure storage => clear :", err);
+      console.error("Error secure storage => force-clear :", err);
     }
   };
 }
