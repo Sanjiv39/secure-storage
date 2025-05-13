@@ -2,7 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   // entry: ["src/**/*.[jt]s"], // for multiple files
-  entry: ["src/index.ts", "!src/(utils|test).(ts|js)"],
+  entry: ["src/index.ts", "!src/(utils|test)/*.(ts|js)"],
   format: ["cjs", "esm"],
   platform: "browser",
   target: ["node16"],
