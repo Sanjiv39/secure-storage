@@ -1,4 +1,5 @@
 import { decrypt, encrypt } from "./crypt";
+import { mainConfig } from "./config";
 
 var window: Window & typeof globalThis;
 /**
@@ -27,7 +28,7 @@ export type SupportedTypesString =
 
 const getPrefix = () => {
   try {
-    const prefix = process?.env?.SECURE_STORAGE_PREFIX || "@secst";
+    const prefix = mainConfig.prefix;
     if (typeof prefix !== "string") {
       throw new Error("Invalid prefix, not a string");
     }
