@@ -1,7 +1,7 @@
 import CryptoJS from "crypto-js";
+import { mainConfig } from "./config";
 
-export const secret =
-  process?.env?.SECURE_STORAGE_SECRET || "x1bQYQA4vSEcR6RQ05XtJg";
+const secret = mainConfig.secret;
 
 export const encrypt = (value: string) => {
   try {
