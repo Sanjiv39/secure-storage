@@ -55,7 +55,7 @@ yarn add @secure-storage/common
 
 ## 🚀 Quick Start
 
-- You can **configure** you own hash and prefix using `env` with these variables
+You can **configure** you own hash and prefix using `env` with these variables
 
 ```bash
 SECURE_STORAGE_SECRET="<your-hash-secret>"
@@ -78,7 +78,18 @@ export default defineConfig({
 });
 ```
 
-- Here is an **example usage**
+Also you can configure via the `configure` function
+
+```ts
+import { configure } from "@secure-storage/common";
+
+configure({
+  secret: "ze329jdfjhf348ad",
+  prefix: "my-secure-storage",
+});
+```
+
+Here is an **example usage**
 
 ```ts
 import { localStorage, sessionStorage } from "@secure-storage/common";

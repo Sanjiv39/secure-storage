@@ -19,21 +19,36 @@ export const mainConfig: Config = {
   prefix: ENV?.SECURE_STORAGE_PREFIX || "@secst",
 };
 
+const optionValidation = (
+  value?: string,
+  options?: Partial<{
+    appendChecker: (value: string) => boolean;
+    message: string;
+  }>
+) => {
+  if (typeof value === "undefined") {
+    return;
+  }
+  if (
+    typeof value !== "string" ||
+    !value.trim() ||
+    (typeof options?.appendChecker === "function" &&
+      !options.appendChecker(value))
+  ) {
+    throw new Error(options?.message || "Value must be a valid string");
+  }
+};
+
 export const configure = (config?: Partial<Config>) => {
   try {
     if (config && typeof config === "object") {
-      if (
-        typeof config.prefix !== "undefined" &&
-        (typeof config.prefix !== "string" || !config.prefix.trim())
-      ) {
-        throw new Error("Prefix must be valid string");
-      }
-      if (
-        typeof config.secret !== "undefined" &&
-        (typeof config.secret !== "string" || !config.secret.trim())
-      ) {
-        throw new Error("Secret must be valid string");
-      }
+      optionValidation(config.prefix, {
+        message: "Prefix must be a valid string",
+      });
+      optionValidation(config.secret, {
+        message: "Secret must be a valid string",
+      });
+
       for (const key in config) {
         if (typeof config[key as keyof Config] !== "undefined") {
           mainConfig[key as keyof Config] = config[
@@ -43,6 +58,6 @@ export const configure = (config?: Partial<Config>) => {
       }
     }
   } catch (err) {
-    console.error("Error secure storage => encrypt :", err);
+    console.error("Error secure storage => update-configuration :", err);
   }
 };
