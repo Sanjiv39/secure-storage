@@ -128,3 +128,6 @@ sessionStorage.forceClear();
 To contribute on the library, make sure you are creating a development branch for your fix as `dev-{feature/fix name}` and create a PR to `main` branch.
 
 You can test your changes using `npm run test` or `npm run dev-test` before pushing.
+
+
+<!-- Security scan triggered at 2026-09-05 07:37:03 -->
